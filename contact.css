@@ -1,0 +1,368 @@
+
+body{
+    background-color: blue;
+    box-sizing: border-box;
+}
+
+
+/* the entire left side of the page. */
+.info-section {
+    padding: 54px;    
+    width: 35%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* -----------------------------------------------------------------HAMBURGER MENU BEGINS-----------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.hamburger-menu {
+    width: 35px;
+    height: 50px;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.8s;
+}
+
+.change .line-1 {
+    transform: rotateZ(-405deg)  translate(-8px, 14px);
+}
+
+/* hides the middle line */
+.change .line-2 {
+    opacity: 0;
+}
+
+.change .line-3 {
+    transform: rotateZ(405deg) translate(-8px, -14px);
+
+}
+
+
+.navbar {
+    width: 200px;
+    height: 100%;
+    background-color: black;
+    position: fixed; 
+    top: 0;
+    left: -300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 60% 35% 0;
+    /* line of code below enables the smooth transition movement on the left side */
+    transition: left .8s cubic-bezier(1,0,0,1);    
+}
+
+/* Performed in Javascript toggle method. 
+When hamburger-icon is clicked the change occurs(oval shape menu) on the left side. */
+.change {
+    left: 0;
+}
+
+.nav-list {
+    text-align: right;
+    }
+
+
+    .nav-item {
+        list-style: none;
+        margin: 25px;
+    }
+
+    .nav-link {
+
+        text-decoration: none;
+        font-size: 22px;
+        color: white;
+        font-weight: 300;
+        text-transform: uppercase;
+        position: relative;
+
+    }
+
+.nav-link::before, .nav-link::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: blue;
+    position: absolute;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    }
+    /* top line moves from left to right when hovered over links */
+    .nav-link::before {
+        top: 0;
+        transform-origin: left;
+    }
+
+        /* bottom line moves from right to left when hovered over links */
+    .nav-link::after {
+        bottom: 0;
+        transform-origin: right;
+        }
+       
+
+        .nav-link:hover::before, .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+
+    /* -----------------------------------------------------------------HAMBURGER MENU ENDS-----------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* reference all 5 lines of information at bottom left corner. */
+.info-box {
+ position: absolute;
+bottom: 60px;
+font-size: 1.2rem;
+font-weight: normal;
+margin: 0.7rem 0;
+color: white;
+line-height: 0.5;
+
+}
+
+/* targets the social media icons */
+.icon-section, a {
+    color: white;    
+    padding: 0 10px 0 0;
+    display: flex;  
+   }
+
+   .icon-section, a:hover {
+       color: purple;
+   }
+
+
+   .contact-box h1 {
+    text-decoration: underline white;
+    color: white;
+    font-size: 2.5rem; 
+    margin-top: 60px;
+    margin-left: 730px;
+    
+}
+
+.contact-box p {
+    max-width: 500px;
+    font-size: 1.5rem;
+    margin-left: 620px;
+    text-align: center;
+    color: white;
+      
+}  
+  
+
+/* ////////////////////////////////////////styling the html form and to reference html do not require # or .(dot)///////////////// */
+
+.typeform-widget {
+    height: 400px;
+    width: 60%;
+    margin-left: 400px;
+    margin-top: 100px;
+    border-radius: 60px;
+    
+}
+
+
+button {
+    padding: 15px 30px;
+    background-color: blue;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    width: 100%;
+    border-radius: 30px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+form h4 {
+    font-size: 1.3rem;
+    color: white;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+
+
+}
+
+/* ///////////////////////////////////////////////////My contact information on the far right//////////////////////////// */
+
+.contact-box:hover {
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+    .contact-box h5 {
+        font-weight: bold;
+        color: blue;
+        text-decoration: underline;
+        margin-bottom: -10px;
+    }
+
+
+
+    /* ---------------------------------RESPONSIVE PROPERTIES  --------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------------------------------------------------------------
+    ------------------------------------------------------------------------------------------------------------------------------------------*/
+/* mobile phones */
+
+@media (min-width: 0px) and (max-width: 1200px) {
+
+    /*----------------------------------------------- the hamburger-menu -------------------------------------------------*/
+        
+    .hamburger-menu {
+        left: 20px;
+    }
+    
+    .line {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        transition: all 0.8s;            
+    }
+
+    .navbar {
+        width: 100px;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        font-size: 10px;
+        color: white;
+        font-weight: 100;
+    }
+/* ----------------------------------------------------------------------END OF HAMBURGER MENU------------------------------------------------- */
+       
+      .contact-box h1 {
+    text-decoration: underline white;
+    color: white;
+    font-size: 1rem; 
+    margin-top: 60px;
+    margin-left: 170px;
+    
+} 
+
+ .contact-box p {
+    max-width: 160px;
+    font-size: 1rem;
+    margin-left: 150px;
+    text-align: center;
+    color: white;      
+}   
+
+.info-box {
+    display: none;
+}
+
+    .typeform-widget {
+    margin-left: 100px;
+    margin-top: 100px;
+ 
+    
+}
+
+  
+}
+
+
+/* tablets */
+@media (min-width: 375px) and (max-width: 1500px) {
+   
+    /*----------------------------------------------- the hamburger-menu -------------------------------------------------*/
+        
+    .hamburger-menu {
+        left: 20px;
+    }
+    
+    .line {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        transition: all 0.8s;            
+    }
+
+    .navbar {
+        width: 100px;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        font-size: 10px;
+        color: white;
+        font-weight: 100;
+    }
+/* ----------------------------------------------------------------------END OF HAMBURGER MENU------------------------------------------------- */
+   
+             
+         .contact-box h1 {
+       text-decoration: underline white;
+       color: white;
+       font-size: 1rem; 
+       margin-top: 60px;
+       margin-left: 270px;
+       
+   } 
+   
+    .contact-box p {
+       max-width: 160px;
+       font-size: 1rem;
+       margin-left: 250px;
+       text-align: center;
+       color: white;      
+   }   
+
+   
+   
+       .typeform-widget {
+       margin-left: 100px;
+       margin-top: 100px;
+    
+       
+   }
+   
+   
+   }
+   
+   
+
+/* laptops and small desktops  */
+@media (min-width: 1501px) and (max-width: 1599px) {
+
+    
+
+}
+
+
+/* large desktops */
+@media (min-width: 1601px) and (max-width: 3000px) {
+   
+      
+
+}

@@ -1,0 +1,550 @@
+
+body{
+    background-color: blue;
+    box-sizing: border-box;      
+}
+
+/* /////////////////////////////////////////////////////// left section of the home page    //////////////////////////////////////////////////// */
+
+/* the entire left side of the page. */
+.info-section {
+    padding: 54px;    
+    width: 35%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
+/* -----------------------------------------------------------------HAMBURGER MENU BEGINS-----------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.hamburger-menu {
+    width: 35px;
+    height: 50px;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.8s;
+}
+
+.change .line-1 {
+    transform: rotateZ(-405deg)  translate(-8px, 14px);
+}
+
+/* hides the middle line */
+.change .line-2 {
+    opacity: 0;
+}
+
+.change .line-3 {
+    transform: rotateZ(405deg) translate(-8px, -14px);
+
+}
+
+
+.navbar {
+    width: 200px;
+    height: 100%;
+    background-color: black;
+    position: fixed; 
+    top: 0;
+    left: -300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 60% 35% 0;
+    /* line of code below enables the smooth transition movement on the left side */
+    transition: left .8s cubic-bezier(1,0,0,1);    
+}
+
+/* Performed in Javascript toggle method. 
+When hamburger-icon is clicked the change occurs(oval shape menu) on the left side. */
+.change {
+    left: 0;
+}
+
+.nav-list {
+    text-align: right;
+    }
+
+
+    .nav-item {
+        list-style: none;
+        margin: 25px;
+    }
+
+    .nav-link {
+
+        text-decoration: none;
+        font-size: 22px;
+        color: white;
+        font-weight: 300;
+        text-transform: uppercase;
+        position: relative;
+
+    }
+
+.nav-link::before, .nav-link::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: blue;
+    position: absolute;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    }
+    /* top line moves from left to right when hovered over links */
+    .nav-link::before {
+        top: 0;
+        transform-origin: left;
+    }
+
+        /* bottom line moves from right to left when hovered over links */
+    .nav-link::after {
+        bottom: 0;
+        transform-origin: right;
+        }
+       
+
+        .nav-link:hover::before, .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+
+    /* -----------------------------------------------------------------HAMBURGER MENU ENDS-----------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* reference all 5 lines of information at bottom left corner. */
+.info-box {
+ position: absolute;
+bottom: 60px;
+font-size: 1.2rem;
+font-weight: normal;
+margin: 0.7rem 0;
+color: white;
+line-height: 0.5;
+display: block;
+
+}
+
+/* targets the social media icons */
+.icon-section, a {
+    color: white;    
+    padding: 0 10px 0 0;
+    display: flex;  
+   }
+
+   .icon-section, a:hover {
+       color: purple;
+   }
+
+/* //////////////////////////////////////////PROPERTIES FOR THE CONTENT ON THE RIGHT SIDE OF THE PAGE  BEGINS//////////////////// */
+   .profile-section {
+    vertical-align: top;
+    display: inline-block;
+    box-sizing: border-box;  
+    margin-top: -520px;
+    box-sizing: border-box;  
+    padding: 0 25% 0 0;        
+    margin-right: 30%;
+   }
+
+
+/* moves the content area to the right with a width of 65% long in white. */
+.content-area {
+    box-sizing: border-box;
+    width: 65%;
+    margin-left: 35%;
+    background-color: white;
+    height: 100%;
+    padding: 0 0 0 25%;    
+ 
+}
+
+/* ////////////////////////////////targets the large pic of me/////////////////////////////////////////////// */
+.user-img img {
+    height: 680px;
+    width: 450px;
+    margin-left: -600px;
+    margin-top: 30px;
+    border-radius: 20px;
+   }
+
+
+   /* ////////////////////////////references information on the right side of the screen//////////////////////////// */
+
+.profile h1 {
+font-size: 1.3rem;
+
+}
+
+.profile h3 {
+    color: blue;
+}
+
+.profile p {
+    font-size:medium;
+    word-spacing: 0.2rem;
+    }
+
+
+
+ /* Using flexbox to align button control "Contact" beside button control "Portfolio". */
+.flex-container {   
+    display: flex;
+} 
+
+
+/* ///////////////////////Targets profile button/////////////////// */
+.portfolio-btn {
+    background-color: blue;
+    border: 3px solid;
+    border-radius: 30px;
+    text-align: center;
+    padding: 15px 30px;
+    color: white;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-right: 15px;
+  
+}
+
+/* /////////////////////////////////Targets resume button/////////////////////////// */
+.contact-btn {
+    border: 4px solid blue;
+    color: blue;
+    border-radius: 30px;
+    text-align: center;
+    padding: 15px 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 3px;   
+}
+
+
+
+/* ---------------------------------RESPONSIVE PROPERTIES  -------------------------------------------------------------------------------------*/
+/* mobile phones */
+
+
+@media (max-width: 767px) {
+
+    * {
+        margin: 0px;
+       
+    }
+    
+    body, html {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-color: white;
+    }
+    
+    .content-area {
+                width: 100%;
+                max-width: 1100px;
+                margin-left: 35%;
+                margin-right: auto;
+                background-color: white;
+            
+            }
+            
+
+    .profile h1 {
+        font-size: 0.6rem;
+        margin-left: -80px;
+        
+        }
+        
+        .profile p {
+            font-size:small;     
+            word-spacing: 0.2rem;
+            margin-left: -120px;
+            padding: 10px 115px 0 10px;
+            box-sizing: border-box;
+        
+            }
+        
+        .profile h3 {
+            color: blue;
+            font-size: small;
+            margin-left: -85px;
+            padding-top: 10px;
+        
+        }
+        
+           .user-img img {
+            height: 180px;
+            width: 150px;
+            margin-left: -100px;
+            margin-top: 30px;
+           }
+        
+                   
+        .info-box {
+       display: none;
+        
+        }
+        
+        /*----------------------------------------------- the hamburger-menu -------------------------------------------------*/
+        
+        .hamburger-menu {
+            left: 20px;
+        }
+        
+        .line {
+            width: 100%;
+            height: 3px;
+            background-color: blue;
+            transition: all 0.8s;            
+        }
+
+        .navbar {
+            width: 100px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-size: 10px;
+            color: white;
+            font-weight: 100;
+        }
+/* ----------------------------------------------------------------------END OF HAMBURGER MENU------------------------------------------------- */
+                 
+        
+         .flex-container {   
+         display: contents;
+        } 
+        
+         .profile-section {
+            vertical-align: top;
+            display: inline-block;
+            box-sizing: border-box;  
+            margin-top: 10px;
+            margin-right: 50%;
+           }
+        
+         .portfolio-btn {
+            background-color: blue;
+            border: 2px solid;
+            border-radius: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-left: -65%;
+            margin-top: 20px;
+
+            
+          
+        }
+        
+        /* /////////////////////////////////Targets resume button/////////////////////////// */
+        .contact-btn {
+            border: 2px solid blue;
+            color: blue;
+            border-radius: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 10px;
+            margin-left: -65%;
+        
+           
+        }
+}
+
+@media (orientation: landscape) {
+
+    body, html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+}
+
+
+/* tablets */
+@media (min-width: 768px) and (max-width: 1360px) {
+
+     
+        /*----------------------------------------------- the hamburger-menu -------------------------------------------------*/
+        
+        .hamburger-menu {
+            left: 20px;
+        }
+        
+        .line {
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            transition: all 0.8s;            
+        }
+
+        .navbar {
+            width: 100px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-size: 10px;
+            color: white;
+            font-weight: 100;
+        }
+/* ----------------------------------------------------------------------END OF HAMBURGER MENU------------------------------------------------- */
+                 
+    
+    .profile h1 {
+        font-size: 0.6rem;
+        margin-left: -80px;
+        
+        }
+        
+        .profile p {
+            font-size:small;     
+            word-spacing: 0.2rem;
+            margin-left: -120px;
+            padding: 10px 115px 0 10px;
+            box-sizing: border-box;
+        
+            }
+        
+        .profile h3 {
+            color: blue;
+            font-size: small;
+            margin-left: -78px;
+            padding-top: 10px;
+
+        
+        }
+        
+        .user-img img {
+            height: 180px;
+            width: 150px;
+            margin-left: -100px;
+            margin-top: 80%;
+           }
+        
+           .content-area {
+            box-sizing: border-box;
+            width: 65%;
+            margin-left: 35%;
+            background-color: white;
+            height: auto;
+            padding: 0 0 0 35%
+        
+        }
+        
+        .info-box {
+       display: none;
+        
+        }
+
+        .icon-section {
+            display: none;
+        }
+        
+                
+         .flex-container {   
+         display: contents;
+        } 
+        
+         .profile-section {
+            margin-top:20%;
+           }
+        
+         .portfolio-btn {
+            background-color: blue;
+            border: 2px solid;
+            border-radius: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-left: -65%;
+            margin-top: 20px;
+
+          
+        }
+        
+        /* /////////////////////////////////Targets resume button/////////////////////////// */
+        .contact-btn {
+            border: 2px solid blue;
+            color: blue;
+            border-radius: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 10px;
+            margin-left: -65%;
+        
+           
+        }
+}
+
+
+
+/* laptops and small desktops  */
+@media (min-width: 1361px) and (max-width: 1599px) {
+
+   
+}
+
+
+/* large desktops */
+@media (min-width: 1601px) and (max-width: 3000px) {
+
+
+
+   
+      .content-area {
+        box-sizing: border-box;
+        width: 65%;
+        margin-left: 35%;
+        background-color: white;
+        height: 1100px;        
+        padding: 0 0 0 25%;         
+    }
+
+    .profile-section {
+        vertical-align: top;
+        display: inline-block;
+        box-sizing: border-box;  
+        margin-top: -520px;
+        padding: 0 0 0 15%;        
+        margin-right: 30%;
+       }
+
+       .user-img img {
+           height: 840px;
+           width: 450px;
+           margin-left: -90%;
+           margin-top: 40px;
+           border-radius: 20px;
+       }
+
+}
+
+
+ 
